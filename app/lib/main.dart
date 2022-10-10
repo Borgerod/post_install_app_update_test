@@ -72,17 +72,16 @@ class _MyHomePageState extends State<MyHomePage> {
 
     downloadedFilePath =
         "${(await getApplicationDocumentsDirectory()).path}/$fileName";
-    print("prnting appPath: $appPath");
-    // await dio.download(
-    //   "https://raw.githubusercontent.com/Borgerod/post_install_app_update_test/main/app/app_version_check/$appPath",
-    //   downloadedFilePath,
-    //   onReceiveProgress: (received, total) {
-    //     final progress = (received / total) * 100;
-    //     debugPrint('Rec: $received , Total: $total, $progress%');
-    //     downloadProgress = double.parse(progress.toStringAsFixed(1));
-    //     setState(() {});
-    //   },
-    // );
+    await dio.download(
+      "https://raw.githubusercontent.com/Borgerod/post_install_app_update_test/main/app/app_version_check/$appPath",
+      downloadedFilePath,
+      onReceiveProgress: (received, total) {
+        final progress = (received / total) * 100;
+        debugPrint('Rec: $received , Total: $total, $progress%');
+        downloadProgress = double.parse(progress.toStringAsFixed(1));
+        setState(() {});
+      },
+    );
     debugPrint("File Downloaded Path: $downloadedFilePath");
     if (Platform.isWindows) {
       await openExeFile(downloadedFilePath);
