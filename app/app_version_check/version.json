@@ -1,0 +1,10 @@
+{
+"name":"In app uypdate flutter desktop app",
+"version":  1.4,
+"description":  [
+    "made app"
+],
+"macos_file_name": "",
+"windows_file_name":  "installers/windows/mysetup.exe",
+"linux_file_name":  ""
+}
