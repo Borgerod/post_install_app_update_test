@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       title: 'In App Updates in Flutter Desktop App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
       home: const MyHomePage(title: 'In App Updates in Flutter Desktop App'),
     );
