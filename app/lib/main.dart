@@ -151,6 +151,12 @@ class _MyHomePageState extends State<MyHomePage> {
     final jsonVal = await loadJsonFromGithub();
     debugPrint("Response: $jsonVal");
     showUpdateDialog(jsonVal);
+    // if (jsonVal['version'] > ApplicationConfig.currentVersion) {
+    //   setState(() {
+    //     ApplicationConfig.currentVersion = jsonVal['version'];
+    //   }
+    //   );
+    // }
   }
 
   @override
